@@ -5,20 +5,31 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    scroll-behavior: smooth; 
-    /* O scroll smoorh faz com que o link âncora tenha uma rolagem suave  */
+    scroll-behavior: smooth;  /* O faz com que o link âncora tenha uma rolagem suave  */
 }
 
 header {
     position: fixed;
     width: 100%;
-    padding: 10px 80px;
+    padding: 80px;
     padding-top: 20px;
+    padding-bottom: 20px;
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 10;
-     /* sobreposição maior que outros index */
+    transition: background-color 0.2s ease-in-out; /*Deixa a transição de cores suave*/
+    z-index: 10; /* sobreposição maior que outros index */
+}
+
+/* Header vidro inicial*/
+.header-glass {
+    backdrop-filter: blur(2px); /*Deixa com aspecto de vidro*/
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Header azul acionado pelo js*/
+.header-dark {
+    background-color:#2e2f34;
 }
 
 header nav {
@@ -27,14 +38,14 @@ header nav {
     gap: 40px;
 }
 
-header nav a{
+header nav a {
     text-decoration: none;
     color: #fff;
     font-weight: 500;
     font-size: 1.1em;
 }
 
-header img{
+header img {
     height: 5em;
 }
 
@@ -51,29 +62,31 @@ header a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 100px;
+    padding-bottom: 10px; /*foi necessario para o header reconhecer a  seção about e mudar sua cor*/
     background-image: url(/images/background2.jpg);
     background-size: cover;
 }
 
-#home::before { /* é usada para criar um elemento posicionado absolutamente, que cobre todo o elemento*/
+/* Filtro escuro */
+#home::before {  /* before é usada para criar um elemento posicionado absolutamente, que cobre todo o elemento*/
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.767), rgba(0, 0, 0, 0.651));
+    background: linear-gradient(rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0.651));
     z-index: 1;
-} 
+}
 
 #home .content {
     color: white;
     position: relative;
     display: flex;
     flex-direction: column;
-    padding-top: 150px;
+    padding-top: 140px;
     gap: 10px;
-    max-width: 600px;
+    max-width: 550px;
     z-index: 2;
 }
 
@@ -121,31 +134,75 @@ header a:hover {
     color: #fff;
 }
 
-#about, #services, #contact {
+#about,
+#services,
+#contact {
     position: relative;
     min-height: 100vh;
-    padding: 120px 80px;
+    padding: 90px 80px;
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
 #about {
+    background-color: whitesmoke;
+}
 
+#about .content {
+    background: #B6CA80;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 50px 50px 50px 0;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15vh;
+}
+
+#about h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #0000009a;
+}
+
+#about #textAbout {
+    margin-right: 50px;
+    text-align: right;
+}
+
+#about #logoG {
+    width: 30em;
+    margin-left: 60px;
+    margin-right: 50px;
+    border-radius: 30px;
+}
+
+#about #textLogo {
+    margin-left: 50px;
 }
 
 #about #logoR {
-    height: 50em;
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 25em;
+    border-radius: 30px;
+}
+
+#services {
+    background-color: #818889;
 }
 
 #services .content {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     margin: 40px 0;
 }
 
-#services .content .carrousel {
+#services .content .carousel {
     background: #9e9e9e;
     padding: 50px 20px;
     display: flex;
@@ -157,12 +214,13 @@ header a:hover {
 }
 
 footer {
-    margin-bottom: 20px;
+    background-color: #2e2f34;
+    padding-top: 20px;
+    padding-bottom: 20px;
     position: relative;
     text-align: center;
     color: #aaa;
     font-size: 1.2em;
-    bottom: 10px;
 }
 
 footer a {
@@ -172,5 +230,5 @@ footer a {
 }
 
 footer a:hover {
-    color: #fff;
+    color: #aaa;
 }
