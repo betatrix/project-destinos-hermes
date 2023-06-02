@@ -23,7 +23,7 @@ header {
 
 /* Header vidro inicial*/
 .header-glass {
-    backdrop-filter: blur(2px); /*Deixa com aspecto de vidro*/
+    backdrop-filter: blur(2.5px); /*Deixa com aspecto de vidro*/
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
@@ -63,7 +63,7 @@ header a:hover {
     align-items: center;
     padding: 100px;
     padding-bottom: 10px; /*foi necessario para o header reconhecer a  seção about e mudar sua cor*/
-    background-image: url(/images/background2.jpg);
+    background-image: url(./images/background2.jpg);
     background-size: cover;
 }
 
@@ -84,7 +84,7 @@ header a:hover {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding-top: 140px;
+    padding-top: 70px;
     gap: 10px;
     max-width: 550px;
     z-index: 2;
@@ -146,7 +146,7 @@ header a:hover {
 }
 
 #about {
-    background-color: whitesmoke;
+    background-color: rgb(235, 235, 235);
 }
 
 #about .content {
