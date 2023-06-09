@@ -1,11 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,600;0,800;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
+
+:root {
+    --amarelo: #daa520;
+    --cinza: #2e2f34;
+    --verde-escuro: #3c4622;
+
+    --titulos: 2em;
+    --texto-simples: 1.1em;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    scroll-behavior: smooth;  /* O faz com que o link âncora tenha uma rolagem suave  */
+    font-family: 'Source Sans Pro', sans-serif;
+    scroll-behavior: smooth;
+    /* O faz com que o link âncora tenha uma rolagem suave  */
 }
 
 header {
@@ -17,19 +27,22 @@ header {
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 0.2s ease-in-out; /*Deixa a transição de cores suave*/
-    z-index: 10; /* sobreposição maior que outros index */
+    transition: background-color 0.2s ease-in-out;
+    /*Deixa a transição de cores suave*/
+    z-index: 10;
+    /* sobreposição maior que outros index */
 }
 
 /* Header vidro inicial*/
 .header-glass {
-    backdrop-filter: blur(2.5px); /*Deixa com aspecto de vidro*/
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    backdrop-filter: blur(2.5px);
+    /*Deixa com aspecto de vidro*/
+    border-bottom: 1px solid #ffffff0d;
 }
 
 /* Header azul acionado pelo js*/
 .header-dark {
-    background-color:#2e2f34;
+    background-color: var(--cinza);
 }
 
 header nav {
@@ -41,8 +54,8 @@ header nav {
 header nav a {
     text-decoration: none;
     color: #fff;
-    font-weight: 500;
-    font-size: 1.1em;
+    font-weight: 600;
+    font-size: var(--texto-simples);
 }
 
 header img {
@@ -50,7 +63,7 @@ header img {
 }
 
 header a:hover {
-    color: goldenrod;
+    color: var(--amarelo);
     transition: 0.4s;
 }
 
@@ -62,13 +75,15 @@ header a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 100px;
-    padding-bottom: 10px; /*foi necessario para o header reconhecer a  seção about e mudar sua cor*/
+    padding-bottom: 10px;
+    /*foi necessario para o header reconhecer a  seção about e mudar sua cor*/
     background-image: url(./images/background2.jpg);
     background-size: cover;
 }
 
 /* Filtro escuro */
-#home::before {  /* before é usada para criar um elemento posicionado absolutamente, que cobre todo o elemento*/
+#home::before {
+    /* before é usada para criar um elemento posicionado absolutamente, que cobre todo o elemento*/
     content: "";
     position: absolute;
     top: 0;
@@ -92,16 +107,16 @@ header a:hover {
 
 #home .content h2 {
     position: relative;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 2.7em;
-    color: goldenrod;
+    color: var(--amarelo);
     transition: 0.5s;
 }
 
 #home .content p {
     position: relative;
-    font-weight: 300;
-    font-size: 1.1em;
+    font-weight: 400;
+    font-size: var(--texto-simples);
     line-height: 1.5em;
     color: #fff;
 }
@@ -111,17 +126,18 @@ header a:hover {
     color: goldenrod;
 } */
 
-#home .signup-btn {
+#home .signup-btn,
+#services .signup-btn {
     position: relative;
     display: inline-block;
     font-size: 1.1em;
     max-width: 300px;
     width: 200px;
-    background: goldenrod;
-    color: #000000;
+    background: var(--amarelo);
+    color: black;
     text-align: center;
     padding: 18px 30px;
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -129,6 +145,7 @@ header a:hover {
     transition: 0.5s;
 }
 
+#services .signup-btn:hover,
 #home .signup-btn:hover {
     transition: 0.4s;
     color: #fff;
@@ -136,7 +153,7 @@ header a:hover {
 
 #about,
 #services,
-#contact {
+#plans {
     position: relative;
     min-height: 100vh;
     padding: 90px 80px;
@@ -146,75 +163,124 @@ header a:hover {
 }
 
 #about {
-    background-color: rgb(235, 235, 235);
+    background-color: #fcfcfc;
 }
 
 #about .content {
-    background: #B6CA80;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    border-radius: 50px 50px 50px 0;
+    padding-top: 10px;
     position: relative;
     width: 100%;
     display: flex;
     align-items: center;
-    margin-bottom: 15vh;
+    margin-bottom: 10vh;
 }
 
 #about h3 {
-    font-size: 2em;
+    font-size: var(--titulos);
     margin-bottom: 20px;
+    padding-bottom: 20px;
     padding-top: 20px;
-    border-top: 1px solid #0000009a;
+    border-bottom: 2px solid #505c2e9a;
+    color: var(--verde-escuro);
+}
+
+#about b {
+    color: var(--verde-escuro);
 }
 
 #about #textAbout {
-    margin-right: 50px;
-    text-align: right;
+    margin-right: 5em;
+    margin-left: 80px;
 }
 
-#about #logoG {
-    width: 30em;
-    margin-left: 60px;
-    margin-right: 50px;
-    border-radius: 30px;
+#about #img {
+    width: 20em;
+    margin-left: 5em;
 }
 
 #about #textLogo {
-    margin-left: 50px;
+    margin-left: 5em;
+    margin-right: 50px;
 }
 
-#about #logoR {
-    margin-left: 50px;
-    margin-right: 50px;
-    height: 25em;
-    border-radius: 30px;
+#about #logogif {
+    width: 25em;
+    margin-right: 5em;
 }
 
 #services {
-    background-color: #818889;
+    background-color: #aaa;
 }
 
 #services .content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
+    grid-gap: 30px;
     margin: 40px 0;
 }
 
 #services .content .carousel {
-    background: #9e9e9e;
-    padding: 50px 20px;
+    padding: 60px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     flex-direction: column;
     gap: 20px;
-    border: 2px solid #2e2f34;
+}
+
+#services .svg {
+    width: 4em;
+    fill:var(--verde-escuro);
+}
+
+
+#plans h2,
+#services h2 {
+    font-size: var(--titulos);
+    text-align: center;
+}
+
+#services .carousel h3 {
+    
+}
+
+#services .sbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#plans {
+    background-color: #aaa;
+}
+
+#plans .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    margin: 40px 90px;
+}
+
+#plans .content .carousel {
+    background: #ffffff;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#contact {
+    position: relative;
+    min-height: 60vh;
+    padding: 20px 80px;
+    display: flex;
+    justify-content: center;
 }
 
 footer {
-    background-color: #2e2f34;
+    background-color: var(--cinza);
     padding-top: 20px;
     padding-bottom: 20px;
     position: relative;
@@ -224,7 +290,7 @@ footer {
 }
 
 footer a {
-    color: goldenrod;
+    color: var(--amarelo);
     text-decoration: none;
     transition: 0.5s;
 }
