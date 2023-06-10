@@ -7,6 +7,7 @@
     --amarelo200: #ffe182;
     --amarelo50: #fff8e1;
 
+    --azuldark: #041542;
     --azul900: #07277e;
     --azul500: #3454b5;
     --azul300: #7588cb;
@@ -41,8 +42,8 @@ header {
     position: fixed;
     width: 100%;
     padding: 80px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
@@ -78,7 +79,8 @@ header nav a {
 }
 
 header img {
-    height: 5em;
+    height: 4em;
+    padding-top: 2px;
 }
 
 header a:hover {
@@ -111,7 +113,7 @@ header a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0.651));
+    background: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.356));
     z-index: 1;
 }
 
@@ -151,7 +153,7 @@ header a:hover {
     background: var(--amarelo500);
     color: black;
     text-align: center;
-    padding: 18px 30px;
+    padding: 13px 25px;
     font-weight: 600;
     text-decoration: none;
     margin-top: 10px;
@@ -170,7 +172,7 @@ header a:hover {
 #about {
     position: relative;
     min-height: 100vh;
-    padding: 90px 80px;
+    padding: 110px 80px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -227,7 +229,7 @@ header a:hover {
 /* ---------- SERVIÇOS ----------- */
 #services {
     background-color: var(--azul900);
-    padding: 110px 80px 60px 80px;
+    padding: 120px 80px 100px 80px;
 }
 
 #services .content {
@@ -266,6 +268,13 @@ svg {
     font-size: var(--texto-simples);
 }
 
+#services p {
+    color: var(--azul50);
+    font-weight: 300;
+    font-size: var(--texto-simples);
+    text-align: center;
+}
+
 /* ---------- PLANOS ----------- */
 #plans {
     background-color: var(--azul500);
@@ -273,6 +282,7 @@ svg {
 }
 
 #plans .content {
+    color: var(--azuldark);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 30px;
@@ -284,7 +294,7 @@ svg {
     align-items: center;
     flex-direction: column;
 
-    background: linear-gradient(to top, #b3c1f56c, #cbd1e9);
+    background-color: var(--azul300);
     padding: 30px 60px;
     width: 30em; height: 27em;
 
@@ -293,7 +303,6 @@ svg {
 }
 
 #plans h3 {
-    color: var(--cinza900);
     font-size: 1.5em;
 }
 
