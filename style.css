@@ -1,23 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;700;900&display=swap');
 
+/* ---------- VARIÁVEIS ----------- */
 :root {
-    --amarelo: #daa520;
-    --cinza: #2e2f34;
-    --verde-escuro: #3c4622;
+    --amarelo700:#ffa200;
+    --amarelo500: #ffc400;
+    --amarelo200: #ffe182;
+    --amarelo50: #fff8e1;
 
-    --titulos: 2em;
-    --texto-simples: 1.1em;
+    --azul900: #07277e;
+    --azul500: #3454b5;
+    --azul300: #7588cb;
+    --azul50: #e7eaf6;
+
+    --cinza900: #1b1f27;
+    --cinza800: #3c4049;
+    --cinzalight: #737885;
+
+    --branco: #fff;
+
+    --titulo: 4em;
+    --titulo2: 2em;
+    --texto-simples: 1.2em;
+    --texto-simples2: 1.1em
 }
 
+
+/* ---------- GLOBAL ----------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Tajawal', sans-serif;
     scroll-behavior: smooth;
     /* O faz com que o link âncora tenha uma rolagem suave  */
 }
 
+
+/* ---------- CABEÇALHO ----------- */
 header {
     position: fixed;
     width: 100%;
@@ -42,7 +61,7 @@ header {
 
 /* Header azul acionado pelo js*/
 .header-dark {
-    background-color: var(--cinza);
+    background-color: var(--cinza900);
 }
 
 header nav {
@@ -53,8 +72,8 @@ header nav {
 
 header nav a {
     text-decoration: none;
-    color: #fff;
-    font-weight: 600;
+    color: var(--branco);
+    font-weight: 300;
     font-size: var(--texto-simples);
 }
 
@@ -63,10 +82,12 @@ header img {
 }
 
 header a:hover {
-    color: var(--amarelo);
+    color: var(--amarelo700);
     transition: 0.4s;
 }
 
+
+/*---------- INÍCIO -----------*/
 #home {
     position: relative;
     width: 100%;
@@ -77,7 +98,7 @@ header a:hover {
     padding: 100px;
     padding-bottom: 10px;
     /*foi necessario para o header reconhecer a  seção about e mudar sua cor*/
-    background-image: url(./images/background2.jpg);
+    background-image: url(./images/background.jpg);
     background-size: cover;
 }
 
@@ -95,7 +116,7 @@ header a:hover {
 }
 
 #home .content {
-    color: white;
+    color: var(--branco);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -107,33 +128,27 @@ header a:hover {
 
 #home .content h2 {
     position: relative;
-    font-weight: 600;
-    font-size: 2.7em;
-    color: var(--amarelo);
+    font-weight: 300;
+    font-size: var(--titulo);
+    color: var(--amarelo500);
     transition: 0.5s;
 }
 
 #home .content p {
     position: relative;
-    font-weight: 400;
-    font-size: var(--texto-simples);
+    font-weight: 300;
+    font-size: var(--texto-simples2);
     line-height: 1.5em;
-    color: #fff;
+    color: var(--branco);
 }
 
-/* #home .content b {
-    font-weight: 800;
-    color: goldenrod;
-} */
-
-#home .signup-btn,
-#services .signup-btn {
+#home .signup-btn {
     position: relative;
     display: inline-block;
-    font-size: 1.1em;
+    font-size: var(--texto-simples);
     max-width: 300px;
     width: 200px;
-    background: var(--amarelo);
+    background: var(--amarelo500);
     color: black;
     text-align: center;
     padding: 18px 30px;
@@ -141,29 +156,25 @@ header a:hover {
     text-decoration: none;
     margin-top: 10px;
     margin-bottom: 10px;
-    border-radius: 30px;
+    border-radius: 10px;
     transition: 0.5s;
 }
 
-#services .signup-btn:hover,
 #home .signup-btn:hover {
     transition: 0.4s;
-    color: #fff;
+    color: var(--amarelo50);
 }
 
-#about,
-#services,
-#plans {
+
+/*---------- SOBRE -----------*/
+#about {
     position: relative;
     min-height: 100vh;
     padding: 90px 80px;
     display: flex;
     justify-content: center;
     flex-direction: column;
-}
-
-#about {
-    background-color: #fcfcfc;
+    background-color: var(--branco);
 }
 
 #about .content {
@@ -176,16 +187,20 @@ header a:hover {
 }
 
 #about h3 {
-    font-size: var(--titulos);
+    font-size: var(--titulo2);
     margin-bottom: 20px;
     padding-bottom: 20px;
     padding-top: 20px;
     border-bottom: 2px solid #505c2e9a;
-    color: var(--verde-escuro);
+    color: var(--cinza800s);
+}
+
+#about p {
+    font-size: var(--texto-simples);
 }
 
 #about b {
-    color: var(--verde-escuro);
+    color: var(--cinza800);
 }
 
 #about #textAbout {
@@ -208,8 +223,11 @@ header a:hover {
     margin-right: 5em;
 }
 
+
+/* ---------- SERVIÇOS ----------- */
 #services {
-    background-color: #aaa;
+    background-color: var(--azul900);
+    padding: 110px 80px 60px 80px;
 }
 
 #services .content {
@@ -229,30 +247,29 @@ header a:hover {
     gap: 20px;
 }
 
-#services .svg {
-    width: 4em;
-    fill:var(--verde-escuro);
+svg {
+    width: 64px;
+    height: 64px;
+    fill: var(--azul300);
 }
-
 
 #plans h2,
 #services h2 {
-    font-size: var(--titulos);
+    font-size: var(--titulo2);
+    color: var(--azul50);
     text-align: center;
 }
 
 #services .carousel h3 {
-    
+    color: var(--azul50);
+    font-weight: 300;
+    font-size: var(--texto-simples);
 }
 
-#services .sbutton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+/* ---------- PLANOS ----------- */
 #plans {
-    background-color: #aaa;
+    background-color: var(--azul500);
+    padding: 90px 80px 110px 80px;
 }
 
 #plans .content {
@@ -263,38 +280,117 @@ header a:hover {
 }
 
 #plans .content .carousel {
-    background: #ffffff;
-    padding: 30px 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    background: linear-gradient(to top, #b3c1f56c, #cbd1e9);
+    padding: 30px 60px;
+    width: 30em; height: 27em;
+
+    border-radius: 25px;
     gap: 20px;
 }
 
-#contact {
-    position: relative;
-    min-height: 60vh;
-    padding: 20px 80px;
-    display: flex;
-    justify-content: center;
+#plans h3 {
+    color: var(--cinza900);
+    font-size: 1.5em;
 }
 
+#plans li {
+    font-size: var(--texto-simples2);
+    margin-bottom: 10px;
+}
+
+#plans ul {
+    list-style-image: url(./images/airplane.svg); /* marcardor personalizado */
+    padding-left: 20px;
+}
+
+
+#plans .signup-btn {
+    position: relative;
+    display: inline-block;
+
+    font-size: var(--texto-simples);
+    background: var(--amarelo500);
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.5s;
+
+    width: 200px;
+    padding: 18px 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+}
+
+#plans .signup-btn:hover {
+    transition: 0.4s;
+    color: var(--amarelo50);
+}
+
+#plans .sbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ---------- CONTATO ----------- */
+#contact {
+    min-height: 200px;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+#contact h2 {
+    font-size: var(--titulo2);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#contact .content {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+#contact .content li {
+    margin: 0 18px;
+}
+
+#contact svg {
+    width: 45px;
+    height: 45px;
+    fill: var(--cinza900);
+}
+
+#contact svg:hover {
+    fill: var(--amarelo700);
+    transition: 0.7s;
+}
+
+
+/* ---------- RODAPÉ ----------- */
 footer {
-    background-color: var(--cinza);
+    background-color: var(--cinza900);
     padding-top: 20px;
     padding-bottom: 20px;
     position: relative;
     text-align: center;
-    color: #aaa;
+    color: var(--cinzalight);
     font-size: 1.2em;
 }
 
 footer a {
-    color: var(--amarelo);
+    color: var(--amarelo700);
     text-decoration: none;
     transition: 0.5s;
 }
 
 footer a:hover {
-    color: #aaa;
+    color: var(--azul300);
 }
