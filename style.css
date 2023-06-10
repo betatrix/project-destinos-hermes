@@ -294,7 +294,7 @@ svg {
     align-items: center;
     flex-direction: column;
 
-    background-color: var(--azul300);
+    background-color: var(--azul50);
     padding: 30px 60px;
     width: 30em; height: 27em;
 
