@@ -1,0 +1,266 @@
+/* Telas abaixo de 320 pixels - Celular (principlamente para os dobraveis como o Galaxy Fold ou Flip)*/
+@media (max-width: 320px) {
+    #about .content p {
+        text-align: left;
+    }
+
+    #about .content #textLogo, 
+    #services p {
+        display: none;
+    }
+
+    #plans .content .carousel {
+        width: 15em; height: 50em;
+    }
+
+    #plans .content .p {
+        width: 15em; height: 32em;
+    }
+}
+
+/* Telas abaixo de 414 pixels - Celular */
+@media (min-width: 321px) and (max-width: 414px) {
+    header {
+        justify-content: center;
+    }
+
+    header .navbar{
+        display: none;
+    }
+
+    header img {
+        width: 150px;
+        height: auto;
+        align-items: center;
+    }
+
+    #home {
+        background: linear-gradient(var(--azuldark),var(--azul900));
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
+    }
+
+    #home .content {
+        margin-top: 50px;
+    }
+
+    #home .content h2 {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    #home .content p {
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    #home .signup-btn {
+        align-self: center;
+    }
+
+    #about {
+        padding: 30px 0px 30px 0px;
+    }
+
+    #about img {
+        display: none;
+    }
+
+    #about .content {
+        text-align: center;
+        justify-content: center;
+    }
+
+    #services .content,
+    #contact .content {
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    #plans .content {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        margin: 40px 0px;
+    }
+
+    #plans .content .carousel {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    
+        background-color: var(--azul50);
+        padding: 30px 60px;
+        width: 20em; height: 35em;
+    
+        border-radius: 25px;
+        gap: 20px;
+    }
+
+    #plans .content .p {
+        width: 20em; height: 27em;
+    }
+
+    #plans .content h3 {
+        text-align: center;
+    }
+
+    #contact {
+        margin-top: 0px;
+    }
+
+    #contact h2 {
+        visibility: hidden; /*título ocultado mas ocupando espaço */
+    }
+
+}
+
+
+/* Telas abaixo de 1024 pixels - Tablet*/
+@media (min-width: 415px) and (max-width: 1024px) {
+    header {
+        justify-content: space-around;
+    }
+
+    #home {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
+    }
+
+    #home .content h2 {
+        font-size: 2.5em;
+    }
+
+    #home .content p {
+        font-size: 1em;
+    }
+
+    #home .signup-btn {
+        width: 150px;
+    }
+
+    #about {
+        padding: 30px 0px 30px 50px;
+    }
+
+    #plans .content {
+        display: grid;
+        justify-content: center;
+        grid-gap: 30px;
+        margin: 40px 0px;
+    }
+
+}
+
+/* Telas abaixo de 1680 pixels - Monitor médio*/
+@media (max-width: 1680px) {
+    #plans .content {
+        margin: 5vh 10vh 5vh 10vh ;
+    }
+}
+
+/* Telas abaixo de 2560 pixels - Monitor grande*/
+@media (min-width: 1920px) and (max-width: 2800px) {
+    header {
+        padding: 0px 100px 0px 100px;
+    }
+
+    header nav a {
+        font-size: 30px;
+    }
+
+    header img {
+        width: 200px;
+        height: auto;
+        padding-top: 10px;
+    }
+
+    #home .content {
+        margin-left: 100px;
+        max-width: 1000px;
+    }
+
+    #home .content h2 {
+        font-size: 80px;
+    }
+    
+    #home .content p {
+        font-size: 25px;
+        line-height: 1.5em;
+    }
+
+    #plans .signup-btn,
+    #home .signup-btn {
+        font-size: 25px;
+        width: 300px;
+        height: 70px;
+    }
+
+    #about {
+        padding-right: 300px;
+        padding-left: 300px;
+    }
+
+    #services h2,
+    #plans h2,
+    #about h3 {
+        font-size: 40px;
+    }
+    
+    #plans h3,
+    #plans li,
+    #services p, 
+    #services .carousel h3 ,
+    #about p {
+        font-size: 25px;
+    }
+
+    #about #img {
+        width: 400px;
+    }
+
+    #services {
+        padding: 200px 300px 300px 300px;
+    }
+
+    #services .carousel h3 {
+        color: var(--azul50);
+        font-weight: 300;
+        font-size: var(--texto-simples);
+    }
+
+    #plans {
+        padding: 130px 350px 150px 350px;
+    }
+
+    #plans .content {
+        margin: 80px 0px;
+    }
+    
+    #plans .content .carousel {
+        width: 50em; height: 40em;
+        line-height: 50px;
+    }
+
+    #contact {
+        padding: 100px 0px 150px 0px;
+    }
+
+    #contact h2 {
+        font-size: 50px;
+    }
+
+    #services svg,
+    #contact svg {
+        width: 70px;
+        height: auto;
+    }
+}
