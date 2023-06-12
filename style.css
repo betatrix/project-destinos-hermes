@@ -71,8 +71,20 @@ header nav {
     gap: 40px;
 }
 
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: var(--amarelo50);
+    font-size: 1.0em;
+    font-weight: 700;
+    color: var(--cinza800);
+    cursor: pointer;
+  }
+
 header nav a {
     text-decoration: none;
+    align-self: center;
     color: var(--branco);
     font-weight: 300;
     font-size: var(--texto-simples);
@@ -83,6 +95,7 @@ header img {
     padding-top: 2px;
 }
 
+button:hover,
 header a:hover {
     color: var(--amarelo700);
     transition: 0.4s;
