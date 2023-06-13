@@ -113,7 +113,7 @@ header a:hover {
     padding: 100px;
     padding-bottom: 10px;
     /*foi necessario para o header reconhecer a  seção about e mudar sua cor*/
-    background-image: url(./images/background.jpg);
+    background-image: url(../images/background.jpg);
     background-size: cover;
 }
 
