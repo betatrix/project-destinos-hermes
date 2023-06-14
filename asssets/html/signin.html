@@ -4,18 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <!--Este link carrega o arquivo CSS do Bootstrap, que contém estilos para os ícones, nesse projeto uso o fa fa-eye-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/> 
     <link rel="stylesheet" href="../css/styleSignin.css" />
     <title>Singin</title>
   </head>
   
   <body>
-    <a href="../../index.html"><button class="btn-back"> &larr; Voltar para home</button></a>
+    <a href="../../index.html"><button class="btn-back"> &larr; Voltar para home</button></a> <!--o &larr é um caractere especial-->
     <div class="container">
       <div class="card">
         <h1>Entrar na sua conta</h1>
 
-        <div id="msgError"></div>
+        <div id="msgError"></div> <!--exibe a mensagem de erro definida no js-->
 
         <div class="label">
           <input type="text" id="usuario" paceholder="" required />

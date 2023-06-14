@@ -1,5 +1,6 @@
 let btn = document.querySelector('.fa-eye')
 
+//faz com que ao clicar no fa-eye mostre ou "oculte" a senha 
 btn.addEventListener('click', () => {
     let inputSenha = document.querySelector('#senha')
 
@@ -26,11 +27,13 @@ function entrar() {
         senha: ''
     }
 
+    // Obtém a lista de usuários do armazenamento local
     listaUser = JSON.parse(localStorage.getItem('listaUser'))
 
+    // Verifica se as informações de login inseridas correspondem a algum usuário na lista
     listaUser.forEach((item) => {
         if (usuario.value == item.userCad && senha.value == item.senhaCad) {
-
+            // Se encontrou um usuário correspondente, armazena suas informações
             userValid = {
                 nome: item.nomeCad,
                 user: item.userCad,
@@ -38,7 +41,7 @@ function entrar() {
             }
         }
     })
-
+    // Verifica se os campos de usuário e senha estão vazios
     if (usuario.value.trim() === '' || senha.value.trim() === '') {
         userLabel.setAttribute('style', 'color: red')
         usuario.setAttribute('style', 'border-color: red')
@@ -47,16 +50,18 @@ function entrar() {
         msgError.setAttribute('style', 'display: block')
         msgError.innerHTML = 'Preencha todos os campos'
         usuario.focus()
-        
-    } else if (usuario.value == userValid.user && senha.value == userValid.senha){
+    // Verifica se as informações de login correspondem a um usuário válido
+    } else if (usuario.value == userValid.user && senha.value == userValid.senha){ 
+        // Caso as informações estejam corretas, redireciona para uma página de download logado
         window.location.href = '../html/downloadLogado.html'
 
+        // Gera um token aleatório e armazena no armazenamento local
         let mathRandom = Math.random().toString(16).substr(2)
         let token = mathRandom + mathRandom
-
         localStorage.setItem('token', token)
         localStorage.setItem('userLogado', JSON.stringify(userValid))
-        
+
+    // Caso as informações de login estejam incorretas
     } else {
         userLabel.setAttribute('style', 'color: red')
         usuario.setAttribute('style', 'border-color: red')

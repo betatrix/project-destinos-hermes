@@ -1,6 +1,6 @@
+// Selecionando os elementos do DOM por seus IDs e os armazenam em variáveis para uso posterior.
 let btn = document.querySelector('#verSenha')
 let btnConfirm = document.querySelector('#verConfirmSenha')
-
 
 let nome = document.querySelector('#nome')
 let labelNome = document.querySelector('#labelNome')
@@ -21,12 +21,13 @@ let validConfirmSenha = false
 let msgError = document.querySelector('#msgError')
 let msgSuccess = document.querySelector('#msgSuccess')
 
+// Quando o evento é acionado, a função de callback é executada. Ela verifica o comprimento do valor presente no campo de entrada 
 nome.addEventListener('keyup', () => {
-  if(nome.value.length <= 2){
+  if(nome.value.length <= 2){ //verificação da quantidade de caracteres
     labelNome.setAttribute('style', 'color: red')
     labelNome.innerHTML = 'Nome *Insira no minimo 3 caracteres'
     nome.setAttribute('style', 'border-color: red')
-    validNome = false
+    validNome = false 
   } else {
     labelNome.setAttribute('style', 'color: green')
     labelNome.innerHTML = 'Nome'
@@ -79,8 +80,8 @@ confirmSenha.addEventListener('keyup', () => {
 
 function cadastrar(){
   if(validNome && validUsuario && validSenha && validConfirmSenha){
+     // Cria um objeto com os dados do usuário
     let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
-    
     listaUser.push(
     {
       nomeCad: nome.value,
@@ -88,10 +89,10 @@ function cadastrar(){
       senhaCad: senha.value
     }
     )
-    
+    // Armazena o objeto no armazenamento local
     localStorage.setItem('listaUser', JSON.stringify(listaUser))
-    
-   
+
+    // Exibe mensagem de sucesso e redireciona para a página de login após 3 segundos
     msgSuccess.setAttribute('style', 'display: block')
     msgSuccess.innerHTML = '<strong>Cadastrando usuário...</strong>'
     msgError.setAttribute('style', 'display: none')
@@ -100,9 +101,8 @@ function cadastrar(){
     setTimeout(()=>{
         window.location.href = '../html/signin.html'
     }, 3000)
-  
     
-  } else {
+  } else { // Exibe mensagem de erro se algum campo estiver inválido
     msgError.setAttribute('style', 'display: block')
     msgError.innerHTML = '<strong>Preencha todos os campos corretamente antes de cadastrar</strong>'
     msgSuccess.innerHTML = ''
@@ -110,9 +110,11 @@ function cadastrar(){
   }
 }
 
+
+//faz com que ao clicar no fa-eye mostre ou "oculte" a senha 
 btn.addEventListener('click', ()=>{
   let inputSenha = document.querySelector('#senha')
-  
+
   if(inputSenha.getAttribute('type') == 'password'){
     inputSenha.setAttribute('type', 'text')
   } else {

@@ -1,10 +1,12 @@
+
+//se o token for nulo ele não da permissao para acessar a página e redirecina para fazer seu login
 if (localStorage.getItem("token") == null) {
     alert("Você precisa estar logado para acessar essa página");
     window.location.href = "../html/signin.html";
   }
   
   const userLogado = JSON.parse(localStorage.getItem("userLogado"));
-  
+
   const primeiroNome = userLogado.nome.split(" ")[0]; // Dividir a string em um array de palavras e resgatar o primeiro elemento 
   
   const logado = document.querySelector("#logado");

@@ -1,3 +1,4 @@
+//Faz a mudança do header conforme a seção é alterada
 window.addEventListener('scroll', function() {
     var header = document.getElementById('header');
     var secao = document.getElementById('about');
@@ -11,3 +12,4 @@ window.addEventListener('scroll', function() {
       header.classList.remove('header-dark');
     }
   });
+
