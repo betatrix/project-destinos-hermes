@@ -1,0 +1,119 @@
+/* Telas abaixo de 414 pixels - Celular */
+@media (min-width: 321px) and (max-width: 414px) {
+
+    body {
+        padding: 0px;
+    }
+
+    .btn-login {
+        display: none;
+    }
+
+    .content {
+        flex-direction: column;
+        margin-right: 0px;
+    }
+
+    .content .left {
+        margin: 150px 25px 0px;
+        text-align: center;
+    }
+
+    .content .right .circle {
+        display: none;
+    }
+
+    .content .right {
+        padding: 50px 0px;
+        margin: 0px;
+    }
+
+}
+
+/* Telas abaixo de 1024 pixels - Tablet*/
+@media (min-width: 415px) and (max-width: 1024px) {
+
+    body {
+        padding: 0px;
+    }
+
+    .content {
+        flex-direction: column;
+        margin: 50px;
+    }
+
+    .content .left {
+        margin: 150px 0px 0px 0px;
+        text-align: center;
+    }
+
+    .content .right .circle {
+        display: none;
+    }
+
+    .content .right {
+        padding: 50px 0px;
+        margin: 0px;
+    }
+
+}
+
+
+/* Telas abaixo de 1680 pixels - Monitor médio*/
+@media (min-width: 1260px) and (max-width: 1680px) {
+
+    body {
+        margin-top: 100px;
+    }
+
+    .content {
+        margin-right: 80px;
+    }
+
+    .content .left {
+        margin: 100px 70px 30px 100px;
+    }
+
+    .content .right {
+        /* padding: 50px 0px; */
+        margin: 0px;
+    }
+
+}
+
+/* Telas abaixo de 2560 pixels - Monitor grande*/
+@media (min-width: 1820px) and (max-width: 2800px) {
+    body {
+        margin-top: 300px;
+      }
+
+      .btn-login,
+      .btn-logout,
+      .btn-back {
+        top: 50px;
+        padding: 20px 30px;
+        font-size: 20px;
+      }
+
+      .btn-back {
+        margin-left: 30px;
+      }
+
+      .btn-login,
+      .btn-logout {
+        margin-right: 30px;
+      }
+
+      .content .left {
+        margin-top: 100px;
+    }
+
+      h1 {
+        font-size: 60px;
+      }
+
+      p {
+        font-size: 35px
+      }
+      
+}

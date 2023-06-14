@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Mesmo html que o download.html, porém com a confirmação do login do usuário. Nessa parte, seria uma autenticação com o qrcode
+levando a pessoa não precisar fazer login pelo aplicativo do seu dispositivo móvel-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styleDownload.css">
+    <link rel="stylesheet" href="../css/responsivenessDownload.css">
+    <title>Baixe agora - Destinos de Hermes</title>
+</head>
+
+<body>
+    <a href="../../index.html"><button class="btn-back"> &larr; Voltar para home</button></a>
+    <a href="../html/signin.html"><button class="btn-login">Entrar em outra conta</button></a>
+    <button onclick="sair()" class="btn-logout">Sair</button>
+
+    <div class="container">
+        <div class="content">
+            <div class="left">
+                <h1 id="logado"></h1> <!--Faz com que o nome e o texto pré-definido apareçam-->
+                <p>Não perca mais tempo procurando informações soltas na internet, instale agora nosso aplicativo e desfrute do melhor que o Brasil tem a oferecer!</p>
+                <a href="https://play.google.com/" target="_blank"><img src="../images/playstore.png" alt="icon-play-store"></a>
+            </div>
+
+            <div class="right">
+                <div class="circle"></div>
+                <img src="../images/qrcode.png" alt="QRcode">
+            </div>
+        </div>
+    </div>
+    <script src="../js/scriptDownloadLogado.js"></script>
+</body>
+
+</html>

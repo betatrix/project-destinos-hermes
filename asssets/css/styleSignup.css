@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;700;900&display=swap');
+
+/* ---------- VARIÁVEIS ----------- */
+:root {
+  --amarelo700:#ffa200;
+  --amarelo500: #ffc400;
+  --amarelo200: #ffe182;
+  --amarelo50: #fff8e1;
+
+  --azuldark: #041542;
+  --azul900: #07277e;
+  --azul500: #3454b5;
+  --azul300: #7588cb;
+  --azul50: #e7eaf6;
+
+  --cinza900: #1b1f27;
+  --cinza800: #3c4049;
+  --cinzalight: #737885;
+
+  --branco: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Tajawal', sans-serif;
+}
+
+body {
+  background-image: url("../images/background2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed
+  
+}
+
+body::before { /* before é usada para criar um elemento posicionado absolutamente, que cobre todo o elemento*/
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.897), rgba(0, 0, 0, 0.356));
+  z-index: -1;
+}
+
+.btn-back {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: var(--azul50);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  color: black;
+  cursor: pointer;
+}
+
+.btn-back:hover {
+  background-color: var(--branco);
+  color: var(--amarelo700);
+  transition: 0.4s;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.card {
+  background-color: #ffffffd2;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 1px 0px #0000007a;
+  width: 400px;
+}
+
+h1{
+  text-align: center;
+  margin-top: 10px;
+  font-size: 30px;
+  color: var(--cinza900);
+}
+
+.label input{
+  width: 100%;
+  padding: 5px 5px;
+  display: inline-block;
+  border: 0;
+  border-bottom: 2px solid var(--azul500);
+  background-color: transparent;
+  outline: none;
+  font-size: 20px;
+  transition: all .3s ease-out;
+}
+
+.label{
+  position: relative;
+  font-size: 20px;
+  padding-top: 13px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.label input:focus{
+  border-bottom: 2px solid var(--azuldark);
+}
+
+.label label{
+  color: var(--cinza900);
+  font-weight: 400;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 13px;
+  transition: all .3s ease-out;
+}
+
+.label input:focus + label, /* seleciona o elemento imediatamente após o elemento anterior*/
+.label input:valid + label{
+  font-size: 17px;
+  margin-top: 0;
+}
+
+button{
+  border-color: 2px solid var(--azuldark);
+  color: var(--cinza900);
+  padding: 7px 30px;
+  font-weight: 900;
+  font-size: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: all .4s ease-out;  /*faz com que a transição comece mais rapidamente e desacelere suavemente no final*/
+}
+
+button:hover{
+  background-color: var(--azul500);
+  color: white;
+}
+
+.justify-center{
+  display: flex;
+  justify-content: center;
+}
+
+p{
+  margin-top: 20px;
+  color: var(--cinza900);
+  font-weight: 400;
+  font-size: 18px;
+}
+
+a{
+  color: var(--azuldark);
+  font-weight: bold;
+  text-decoration: none;
+  transition: all .3s ease-out;
+}
+
+a:hover{
+  color: var(--amarelo700);
+}
+
+.fa-eye{
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  cursor: pointer;
+  color: var(--azuldark);
+}
+
+#msgError{
+  text-align: center;
+  font-size: 17px;
+  color: #ff0000;
+  background-color: #ffbbbb;
+  padding: 10px;
+  border-radius: 4px;
+  display: none;
+}
+
+#msgSuccess{
+  text-align: center;
+  font-size: 17px;
+  color: #00bb00;
+  background-color: #bbffbe;
+  padding: 10px;
+  border-radius: 4px;
+  display: none;
+}
+

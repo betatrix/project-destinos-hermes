@@ -1,25 +1,6 @@
-/* Telas abaixo de 320 pixels - Celular (principlamente para os dobraveis como o Galaxy Fold ou Flip)*/
-@media (max-width: 320px) {
-    #about .content p {
-        text-align: left;
-    }
-
-    #about .content #textLogo, 
-    #services p {
-        display: none;
-    }
-
-    #plans .content .carousel {
-        width: 15em; height: 50em;
-    }
-
-    #plans .content .p {
-        width: 15em; height: 32em;
-    }
-}
 
 /* Telas abaixo de 414 pixels - Celular */
-@media (min-width: 321px) and (max-width: 414px) {
+@media (max-width: 414px) {
     header {
         justify-content: center;
     }
@@ -75,6 +56,11 @@
         justify-content: center;
     }
 
+    #about #textLogo {
+        margin-left: 3em;
+        margin-right: 50px;
+    }
+
     #services .content,
     #contact .content {
         grid-template-columns: repeat(1,1fr);
@@ -88,7 +74,7 @@
         margin: 40px 0px;
     }
 
-    #plans .content .carousel {
+    #plans .content .box {
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -118,7 +104,6 @@
     }
 
 }
-
 
 /* Telas abaixo de 1024 pixels - Tablet*/
 @media (min-width: 415px) and (max-width: 1024px) {
@@ -218,7 +203,7 @@
     #plans h3,
     #plans li,
     #services p, 
-    #services .carousel h3 ,
+    #services .box h3 ,
     #about p {
         font-size: 25px;
     }
@@ -231,7 +216,7 @@
         padding: 200px 300px 300px 300px;
     }
 
-    #services .carousel h3 {
+    #services .box h3 {
         color: var(--azul50);
         font-weight: 300;
         font-size: var(--texto-simples);
@@ -245,7 +230,7 @@
         margin: 80px 0px;
     }
     
-    #plans .content .carousel {
+    #plans .content .box {
         width: 50em; height: 40em;
         line-height: 50px;
     }
